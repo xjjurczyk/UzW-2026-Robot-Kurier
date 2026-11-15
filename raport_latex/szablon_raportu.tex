@@ -90,9 +90,13 @@ Akcja & Opis \\
 \subsection{Funkcja nagrody}
 
 
-
 \begin{equation}
-    r_t = \text{do uzupełnienia}
+    r_t = \begin{cases}
+        100 & \text{jeśli paczka dostarczona na metę (sukces)} \\
+        10 & \text{jeśli agent podniósł paczkę (raz na epizod)} \\
+        -100 & \text{jeśli energia spadnie do 0 lub agent wpadnie w pułapkę} \\
+        -1 & \text{za każdy inny krok (w tym uderzenie w ścianę)}
+    \end{cases}
 \end{equation}
 
 W tej sekcji należy wyjaśnić:
